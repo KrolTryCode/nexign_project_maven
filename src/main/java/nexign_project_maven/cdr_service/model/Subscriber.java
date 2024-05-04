@@ -1,14 +1,13 @@
-package nexign_project_maven.model;
-
-import org.springframework.data.annotation.Id;
+package nexign_project_maven.cdr_service.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 
 @Entity
 public class Subscriber {
-    @javax.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,15 +16,7 @@ public class Subscriber {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
     private String phoneNumber;
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Long getId() {
         return id;

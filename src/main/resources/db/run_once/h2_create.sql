@@ -29,4 +29,4 @@ INSERT INTO subscriber (phone_number) VALUES
 CREATE TRIGGER IF NOT EXISTS AFTER_INSERT_TRANSACTION
     AFTER INSERT ON transaction
     FOR EACH ROW
-CALL "nexign_project_maven.cdr.ManageCdr";
+CALL "nexign_project_maven.cdr_service.cdr.ManageCdrTrigger";

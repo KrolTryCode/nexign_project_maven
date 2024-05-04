@@ -1,14 +1,14 @@
-package nexign_project_maven.controller;
+package nexign_project_maven.cdr_service.controller;
 
-import nexign_project_maven.model.Subscriber;
-import nexign_project_maven.repository.SubscriberRepository;
+import nexign_project_maven.cdr_service.model.Subscriber;
+import nexign_project_maven.cdr_service.repository.SubscriberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
+
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/subscribers")
 public class SubscriberController {
 
     @Autowired

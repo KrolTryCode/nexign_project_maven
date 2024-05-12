@@ -10,20 +10,33 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Random;
 
-
+/**
+ * Generates call records by simulating transactions between subscribers.
+ * This component interacts with subscriber and transaction repositories to create and store transaction data.
+ */
 @Component
 public class CallRecordGenerator {
 
     public static SubscriberRepository subscriberRepository;
     public static TransactionRepository transactionRepository;
-
+    /**
+     * Constructs a CallRecordGenerator with the required repositories.
+     *
+     * @param subscriberRepository Repository for accessing subscriber data
+     * @param transactionRepository Repository for saving transaction records
+     */
     @Autowired
     public CallRecordGenerator(SubscriberRepository subscriberRepository, TransactionRepository transactionRepository) {
         CallRecordGenerator.subscriberRepository = subscriberRepository;
         CallRecordGenerator.transactionRepository = transactionRepository;
     }
 
-
+    /**
+     * Creates a call transaction between two different subscribers. Each call involves selecting two random,
+     * distinct subscribers and creating a transaction record for their interaction based on the simulated time.
+     *
+     * @throws InterruptedException if the thread executing the method is interrupted
+     */
     public static void createCall() throws InterruptedException {
         List<Subscriber> subscribers = subscriberRepository.findAll();
 

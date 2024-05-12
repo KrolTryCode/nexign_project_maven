@@ -11,9 +11,18 @@ import java.util.concurrent.Executors;
 import static nexign_project_maven.cdr.cdr_service.CdrGenerator.handlerExistsFiles;
 import static nexign_project_maven.cdr.cdr_service.CdrGenerator.useFileGenerator;
 
-
+/**
+ * Component responsible for managing the simulation data generation threads.
+ * This class listens to the application's readiness and starts the data generation process
+ * based on the configuration provided.
+ */
 @Component
 public class DataThreadManager {
+    /**
+     * Initiates the data generation process when the application is fully ready.
+     * It decides the mode of operation based on the configuration - either generating new CDR data
+     * or processing existing files.
+     */
     @EventListener(ApplicationReadyEvent.class)
     public synchronized void startDataGeneration() {
 

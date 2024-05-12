@@ -1,4 +1,4 @@
-package nexign_project_maven.cdr_service.cdr;
+package nexign_project_maven.cdr.cdr_service;
 
 import java.sql.*;
 import org.h2.tools.TriggerAdapter;

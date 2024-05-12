@@ -24,9 +24,18 @@ INSERT INTO subscriber (phone_number) VALUES
                                           ('7234567890'),
                                           ('8234567890'),
                                           ('9234567890'),
-                                          ('0234567890');
+                                          ('0234567890'),
+                                          ('1987654321'),
+                                          ('2987654321'),
+                                          ('3987654321'),
+                                          ('4987654321'),
+                                          ('5987654321'),
+                                          ('6987654321'),
+                                          ('7987654321'),
+                                          ('8987654321'),
+                                          ('9987654321');
 
 CREATE TRIGGER IF NOT EXISTS AFTER_INSERT_TRANSACTION
     AFTER INSERT ON transaction
     FOR EACH ROW
-CALL "nexign_project_maven.cdr_service.cdr.ManageCdrTrigger";
+CALL "nexign_project_maven.cdr.cdr_service.ManageCdrTrigger";

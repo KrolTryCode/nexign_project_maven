@@ -1,4 +1,4 @@
-package nexign_project_maven.cdr_service;
+package nexign_project_maven.cdr;
 
 
 import org.springframework.boot.SpringApplication;

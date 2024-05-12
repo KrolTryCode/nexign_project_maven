@@ -1,4 +1,4 @@
-package nexign_project_maven.cdr_service.utils;
+package nexign_project_maven.cdr.utils;
 
 public class Constants {
     public static final String CDR_TOPIC = "cdrTopic";

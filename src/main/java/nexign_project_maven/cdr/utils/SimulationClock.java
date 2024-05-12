@@ -1,9 +1,9 @@
-package nexign_project_maven.cdr_service.utils;
+package nexign_project_maven.cdr.utils;
 
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
 
-import static nexign_project_maven.cdr_service.utils.Constants.*;
+import static nexign_project_maven.cdr.utils.Constants.*;
 
 public class SimulationClock {
 
@@ -15,8 +15,6 @@ public class SimulationClock {
     private static final Random random = new Random();
 
     public static void initialize() {
-        System.out.println(customCurrentTime);
-        System.out.println(endTime);
         currentTime.set(customCurrentTime);
     }
 

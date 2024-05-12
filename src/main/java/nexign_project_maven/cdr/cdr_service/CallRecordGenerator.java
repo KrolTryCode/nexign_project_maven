@@ -1,10 +1,10 @@
-package nexign_project_maven.cdr_service.cdr;
+package nexign_project_maven.cdr.cdr_service;
 
-import nexign_project_maven.cdr_service.utils.SimulationClock;
-import nexign_project_maven.cdr_service.model.Subscriber;
-import nexign_project_maven.cdr_service.model.Transaction;
-import nexign_project_maven.cdr_service.repository.SubscriberRepository;
-import nexign_project_maven.cdr_service.repository.TransactionRepository;
+import nexign_project_maven.cdr.utils.SimulationClock;
+import nexign_project_maven.cdr.model.Subscriber;
+import nexign_project_maven.cdr.model.Transaction;
+import nexign_project_maven.cdr.repository.SubscriberRepository;
+import nexign_project_maven.cdr.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.List;
@@ -14,15 +14,16 @@ import java.util.Random;
 @Component
 public class CallRecordGenerator {
 
-    private static SubscriberRepository subscriberRepository;
-    private static TransactionRepository transactionRepository;
+    public static SubscriberRepository subscriberRepository;
+    public static TransactionRepository transactionRepository;
+
     @Autowired
     public CallRecordGenerator(SubscriberRepository subscriberRepository, TransactionRepository transactionRepository) {
         CallRecordGenerator.subscriberRepository = subscriberRepository;
         CallRecordGenerator.transactionRepository = transactionRepository;
     }
 
-    //возможно добавить логику чтобы пока один абонент занят, ему не могли звонить?
+
     public static void createCall() throws InterruptedException {
         List<Subscriber> subscribers = subscriberRepository.findAll();
 

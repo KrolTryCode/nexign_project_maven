@@ -1,4 +1,4 @@
-package nexign_project_maven.cdr_service.model;
+package nexign_project_maven.cdr.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
